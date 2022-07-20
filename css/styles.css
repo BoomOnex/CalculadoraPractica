@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;  
+}
+body{background:#ECF0F1}
+html{
+    font-family: 'Josefin',sans-serif;
+    font-size: 62.5%;
+}
+.contenedor{
+  display:flex;
+  justify-content: center;
+  align-items: center;  
+  height: 100vh;
+  padding: 15px;
+}
+.calculator{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    font-size: 2rem;
+    border: 1px solid gray;
+}
+
+.calculator-display{
+    padding: 25px 15px;
+    width: 100%;
+    text-align: right;
+    border: 1px solid gray;
+    overflow-x: auto;
+}
+
+.calculator-keypad{
+    display: flex;
+    width: 100%;
+}
+
+.keypad-numbers{
+    display: flex;
+    flex-wrap: wrap;/* cuando supere el ancho de 500px se hace que se arme una fila debajo*/
+    width: 100%;
+}
+.keypad-button{
+    width: 25%;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(187, 255, 227);
+    border: 1px solid gray;
+}
+/* hace que se oscuresca los botones */
+.keypad-button:hover{
+    filter: brightness(75%);
+    transition: filter .12s;
+}
+.keypad-button.yellow{
+    background-color: rgb(71, 172, 255);
+}
+
+.keypad-button.large{
+    width: 50%;
+}
+.keypad-button.dark {
+    background-color: rgb(40, 97, 255);
+}
+.load{position:absolute;top:6%;left:4%;transform:translate(-50%, -50%);
+    /*change these sizes to fit into your project*/
+    width:65px;
+    height:65px;
+  }
+  .load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+  
+  .load :first-child{background:#19A68C;animation-delay:-1.5s}
+  .load :nth-child(2){background:#F63D3A;animation-delay:-1s}
+  .load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
+  .load :last-child{background:#193B48}
+  
+  @keyframes spin{
+    0%,100%{transform:translate(0)}
+    25%{transform:translate(160%)}
+    50%{transform:translate(160%, 160%)}
+    75%{transform:translate(0, 160%)}
+  }
